@@ -1,14 +1,8 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - lucien-brey
+  - atinary-lbrey
 
 repo_description_lines_max: 2
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - lucien-brey/website-lars
