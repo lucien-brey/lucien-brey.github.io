@@ -6,3 +6,4 @@ repo_description_lines_max: 2
 
 github_repos:
   - lucien-brey/website-lars
+  - lucien-brey/flow-matching-playground
