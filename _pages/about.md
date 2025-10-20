@@ -27,6 +27,6 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Trying to make computers learn chemistry. Working at [Atinary Technologies](https://www.atinary.com/) in Lausanne Switzerland. MSc in Biological and Molecular Chemistry from EPFL, I wrote my master thesis with Prof. Rafa Gomez-Bombarelli in the [RGB lab](https://gomezbombarelli.mit.edu) at the Massachussets Institute of Technology. Previously I also worked with Prof. [Philippe Schwaller](https://scholar.google.com/citations?user=Tz0I4ywAAAAJ&hl=fr&oi=ao) (EPFL), Prof. [Clemence Corminboeuf](https://scholar.google.ch/citations?user=S33KGskAAAAJ&hl=en) (EPFL) and Prof. [Mårten Ahlquist](https://scholar.google.com/citations?user=ACVkVEwAAAAJ&hl=en) (KTH). 
+Trying to make computers learn chemistry. Working at [Atinary Technologies](https://www.atinary.com/) in Lausanne Switzerland. MSc in Biological and Molecular Chemistry from EPFL, I wrote my master thesis with Prof. Rafa Gomez-Bombarelli in the [RGB lab](https://gomezbombarelli.mit.edu) at the Massachussets Institute of Technology. Previously I also worked with Prof. [Philippe Schwaller](https://scholar.google.com/citations?user=Tz0I4ywAAAAJ&hl=fr&oi=ao) (EPFL), Prof. [Clemence Corminboeuf](https://scholar.google.ch/citations?user=S33KGskAAAAJ&hl=en) (EPFL) and Prof. [Mårten Ahlquist](https://scholar.google.com/citations?user=ACVkVEwAAAAJ&hl=en) (KTH).
 
 I am interested in probabilistic machine learning, catalysis, live music and chess.
