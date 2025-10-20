@@ -53,6 +53,20 @@
             ]
         },
         {
+            "institution": "Massachussets Institute of Technology, MIT",
+            "location": "Cambridge MA, USA",
+            "url": "https://www.mit.edu/",
+            "area": "Computation Design of Materials",
+            "studyType": "Master Thesis",
+            "startDate": "2024-03-01",
+            "endDate": "2024-09-02",
+            "courses": [
+                "Wrote my Master Thesis with Prof. Rafa Gomez-Bombarelli",
+                "Title: Differentiable inverse design of metal oxides and perovskites catalyst via fine-tuning of surface oxygens site-properties",
+                "Built differentiable pipeline for geometry optimization of periodic structures based target site-property."
+            ]
+        },
+        {
             "institution": "École Polytechnique Fédérale de Lausanne, EPFL",
             "location": "Lausanne, Switzerland",
             "url": "https://www.epfl.ch/",
@@ -65,9 +79,22 @@
                 "Advanced General Chemistry",
                 "Quantum Chemistry",
                 "Spectroscopy",
-                "Introduction to Machine Learning (followed at KTH)"
+                "Mathematical Methods in Chemistry"
             ]
-        }
+        },
+        {
+            "institution": "Kungliga Tekniska Högskolan, KTH",
+            "location": "Stockholm, Sweden",
+            "url": "https://www.kth.se",
+            "area": "Chemistry and Chemical Engineering",
+            "studyType": "Exchange Year",
+            "startDate": "2021-09-01",
+            "endDate": "2022-06-05",
+            "courses": [
+                "Introduction to Machine Learning",
+                "Introduction to Python Programming Language"
+            ]
+        },
     ],
     // "teaching": [
     //     {
