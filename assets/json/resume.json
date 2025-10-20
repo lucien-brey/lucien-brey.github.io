@@ -4,6 +4,7 @@
     "Current position": "Machine Learning Scientist",
     "image": "",
     "email": "lucien[dot]brey[at]hotmail[dot]fr",
+    "Note": "For up-to-date CV, check the PDF link above.",
     "location": {
       "address": "Route de la Corniche 4",
       "postalCode": "1066",
@@ -53,7 +54,7 @@
             ]
         },
         {
-            "institution": "Massachussets Institute of Technology, MIT",
+            "institution": "Massachusetts Institute of Technology, MIT",
             "location": "Cambridge MA, USA",
             "url": "https://www.mit.edu/",
             "area": "Computation Design of Materials",
