@@ -121,6 +121,13 @@
       "releaseDate": "2025",
       "url": "",
       "summary": "Project in a Social and Human Sciences class during my master that led to that publication. We came up with a statistical model and a form to explain the interplay between loss and threat in the context of extreme ecological law changes. Some field work also has been perfomed in order to gather data asking people to fill our survey."
+    },
+    {
+        "name": "Bridging Innovation and Efficiency: The Promises and Challenges of Self-Driving Labs as Sustainable Drivers for Chemistry",
+        "publisher": "Chimia",
+        "releaseDate": "2025",
+        "url": "",
+        "summary": "Industrial paper from Atinary Technologies. Wrote the perspective on AI in R&D."
     }
   ],
   "skills": [
@@ -129,10 +136,12 @@
         "level": "Master",
         "icon": "fa-solid fa-hashtag",
         "keywords": [
+            "Probabilistic Machine Learning",
             "Bayesian Optimization",
             "Gaussian Processes",
+            "Neural Processes",
             "Variational Inference",
-            "Generative modeling"
+            "Generative Modeling"
         ]
     },
     {
@@ -141,8 +150,10 @@
       "icon": "fa-solid fa-hashtag",
       "keywords": [
         "Molecular Dynamics",
+        "Quantum Chemistry",
         "Monte Carlo Simulations",
-        "Heterogeneous Catalysis"
+        "Heterogeneous Catalysis",
+        "Organic Chemistry"
       ]
     }
   ],
@@ -170,15 +181,14 @@
   ],
   "interests": [
     {
-      "name": "Physics",
+      "name": "Machine Learning and Artificial Intelligence",
       "icon": "fa-solid fa-tag",
       "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
+        "Diffusion Model",
+        "Flow Matching Model",
+        "Bayesian Experimental Design",
+        "Mixed-spaces Optimization",
+        "Reinforcement Learning"
       ]
     }
   ],
