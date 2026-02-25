@@ -314,6 +314,15 @@
   <script src="{{ '/assets/js/tabs.min.js' | relative_url | bust_file_cache }}"></script>
 {% endif %}
 
+{% if page.invitation %}
+  <!-- Invitation page: confetti + invitation logic -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"
+    crossorigin="anonymous"
+  ></script>
+  <script defer src="{{ '/assets/js/invitation.js' | relative_url | bust_file_cache }}"></script>
+{% endif %}
+
 {% if site.back_to_top %}
   <!-- Back to Top -->
   <script src="{{ '/assets/js/vanilla-back-to-top.min.js' | relative_url | bust_file_cache }}"></script>

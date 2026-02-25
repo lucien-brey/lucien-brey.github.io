@@ -1,0 +1,142 @@
+.invitation-page {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.invitation-root {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.invitation-intro,
+.invitation-still {
+  margin-bottom: 1.5rem;
+}
+
+.invitation-intro-text,
+.invitation-still-text {
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.4;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.invitation-question {
+  margin-top: 2rem;
+}
+
+.invitation-question-text {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+.invitation-buttons {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  min-height: 3.5rem;
+}
+
+.invitation-btn {
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  border: 1px solid transparent;
+}
+
+.invitation-btn:hover {
+  transform: scale(1.05);
+}
+
+.invitation-btn-yes {
+  background: var(--global-theme-color, #056ee9);
+  color: #fff;
+  border-color: var(--global-theme-color, #056ee9);
+}
+
+.invitation-btn-no {
+  background: transparent;
+  color: var(--global-text-color, #333);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.invitation-no-wrapper {
+  position: relative;
+  will-change: transform;
+  pointer-events: auto;
+}
+
+.invitation-date-picker {
+  margin-top: 2rem;
+}
+
+.invitation-date-picker-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.invitation-date-picker-range {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  margin-bottom: 1.25rem;
+}
+
+.invitation-dates {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.invitation-date-option {
+  padding: 0.5rem 0.9rem;
+  font-size: 0.95rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background: var(--global-bg-color, #fff);
+  color: var(--global-text-color, #333);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.invitation-date-option:hover {
+  border-color: var(--global-theme-color, #056ee9);
+  color: var(--global-theme-color, #056ee9);
+}
+
+.invitation-date-option.invitation-date-selected {
+  background: var(--global-theme-color, #056ee9);
+  color: #fff;
+  border-color: var(--global-theme-color, #056ee9);
+}
+
+.invitation-date-confirm {
+  margin-top: 1.25rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+@media (max-width: 576px) {
+  .invitation-intro-text,
+  .invitation-still-text {
+    font-size: 1.25rem;
+  }
+  .invitation-dates {
+    flex-wrap: wrap;
+  }
+}

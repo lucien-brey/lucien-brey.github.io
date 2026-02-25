@@ -1,0 +1,35 @@
+<div id="invitation-root" class="invitation-root" data-invitation-endpoint="{{ page.invitation_notification_endpoint | default: '' }}">
+  <section id="invitation-intro" class="invitation-intro" aria-hidden="false">
+    <p id="invitation-intro-text" class="invitation-intro-text"></p>
+  </section>
+
+  <section id="invitation-still" class="invitation-still" aria-hidden="true" hidden>
+    <p class="invitation-still-text">You are invited to a date in Lausanne</p>
+  </section>
+
+  <section id="invitation-question" class="invitation-question" aria-hidden="true" hidden>
+    <p class="invitation-question-text">Do you want to come?</p>
+    <div class="invitation-buttons">
+      <button type="button" id="invitation-yes" class="invitation-btn invitation-btn-yes">Yes</button>
+      <div class="invitation-no-wrapper" id="invitation-no-wrapper">
+        <button type="button" id="invitation-no" class="invitation-btn invitation-btn-no">No</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="invitation-date-picker" class="invitation-date-picker" aria-hidden="true" hidden>
+    <p class="invitation-date-picker-title">Pick a date</p>
+    <p class="invitation-date-picker-range">Monday 2 March – Monday 9 March</p>
+    <div class="invitation-dates" id="invitation-dates">
+      <button type="button" class="invitation-date-option" data-date="2026-03-02">Monday 2nd</button>
+      <button type="button" class="invitation-date-option" data-date="2026-03-03">Tuesday 3rd</button>
+      <button type="button" class="invitation-date-option" data-date="2026-03-04">Wednesday 4th</button>
+      <button type="button" class="invitation-date-option" data-date="2026-03-05">Thursday 5th</button>
+      <button type="button" class="invitation-date-option" data-date="2026-03-06">Friday 6th</button>
+      <button type="button" class="invitation-date-option" data-date="2026-03-07">Saturday 7th</button>
+      <button type="button" class="invitation-date-option" data-date="2026-03-08">Sunday 8th</button>
+      <button type="button" class="invitation-date-option" data-date="2026-03-09">Monday 9th</button>
+    </div>
+    <p id="invitation-date-confirm" class="invitation-date-confirm" hidden></p>
+  </section>
+</div>
