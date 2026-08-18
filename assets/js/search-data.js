@@ -30,6 +30,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
+        },{id: "nav-similarity-checker",
+          title: "similarity checker",
+          description: "Compute Tanimoto and Dice similarity of your reference molecule with respect to your SMILES library using ECFP fingerprints.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/similarity-checker/";
+          },
         },{id: "post-a-post-with-plotly-js",
         
           title: "a post with plotly.js",
