@@ -191,3 +191,7 @@
 {% if page.invitation %}
   <link rel="stylesheet" href="{{ '/assets/css/invitation.css' | relative_url | bust_file_cache }}">
 {% endif %}
+
+{% if page.similarity_checker %}
+  <link rel="stylesheet" href="{{ '/assets/css/similarity-checker.css' | relative_url | bust_file_cache }}">
+{% endif %}

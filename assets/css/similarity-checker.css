@@ -1,0 +1,101 @@
+.similarity-checker-page {
+  padding: 0 0 2rem;
+}
+
+.similarity-checker-root {
+  max-width: 100%;
+}
+
+.similarity-checker-header {
+  margin-bottom: 1.5rem;
+}
+
+.similarity-checker-title {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.similarity-checker-description {
+  color: var(--global-text-color-light, #828282);
+  margin-bottom: 0;
+}
+
+.similarity-checker-form {
+  margin-bottom: 1rem;
+}
+
+.similarity-library-input {
+  font-family: monospace;
+  font-size: 0.9rem;
+}
+
+.similarity-options-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: flex-end;
+}
+
+.similarity-topk-group {
+  max-width: 8rem;
+}
+
+.similarity-topk-input {
+  width: 100%;
+}
+
+.similarity-fp-size-group {
+  max-width: 10rem;
+}
+
+.similarity-fp-size-select {
+  width: 100%;
+}
+
+.similarity-search-btn {
+  margin-top: 0.25rem;
+}
+
+.similarity-status {
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+
+.similarity-results-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.similarity-results-table th {
+  white-space: nowrap;
+}
+
+.similarity-structure-cell {
+  width: 160px;
+  vertical-align: middle;
+}
+
+.similarity-structure-cell svg {
+  max-width: 150px;
+  max-height: 150px;
+  height: auto;
+  display: block;
+}
+
+.similarity-smiles-cell {
+  font-family: monospace;
+  font-size: 0.9rem;
+  word-break: break-all;
+}
+
+@media (max-width: 576px) {
+  .similarity-checker-title {
+    font-size: 1.5rem;
+  }
+
+  .similarity-structure-cell svg {
+    max-width: 120px;
+    max-height: 120px;
+  }
+}
