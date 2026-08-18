@@ -16,7 +16,20 @@
         placeholder="CCO, c1ccccc1, CC(=O)O, c1ccc(O)cc1"
         spellcheck="false"
       ></textarea>
-      <small id="similarity-delimiter-label" class="form-text text-muted">Delimiter: comma</small>
+      <div class="similarity-delimiter-row">
+        <small id="similarity-delimiter-hint" class="form-text text-muted similarity-delimiter-hint" hidden></small>
+        <select
+          id="similarity-delimiter"
+          class="form-control form-control-sm similarity-delimiter-select"
+          aria-label="Delimiter"
+        >
+          <option value="auto" selected>Auto-detect</option>
+          <option value=",">Comma</option>
+          <option value="newline">Newline</option>
+          <option value="tab">Tab</option>
+          <option value="semicolon">Semicolon</option>
+        </select>
+      </div>
     </div>
 
     <div class="form-group">
@@ -73,6 +86,7 @@
             <th scope="col">Structure</th>
             <th scope="col">SMILES</th>
             <th scope="col">Tanimoto</th>
+            <th scope="col">Dice</th>
           </tr>
         </thead>
         <tbody id="similarity-results-body"></tbody>

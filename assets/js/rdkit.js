@@ -8,7 +8,14 @@
     ',': 'comma',
     ';': 'semicolon'
   };
+  var DELIMITER_MAP = {
+    ',': ',',
+    newline: '\n',
+    tab: '\t',
+    semicolon: ';'
+  };
   var DELIMITER_CANDIDATES = ['\n', '\t', ',', ';'];
+  var DELIMITER_CHOICES_TEXT = 'Choose from comma, newline, tab, and semicolon.';
   var FP_RADIUS = 2;
   var DEFAULT_FP_NBITS = 1024;
 
@@ -17,9 +24,10 @@
   var queryEl = document.getElementById('similarity-query');
   var topkEl = document.getElementById('similarity-topk');
   var fpSizeEl = document.getElementById('similarity-fp-size');
+  var delimiterEl = document.getElementById('similarity-delimiter');
   var searchBtn = document.getElementById('similarity-search-btn');
   var statusEl = document.getElementById('similarity-status');
-  var delimiterLabelEl = document.getElementById('similarity-delimiter-label');
+  var delimiterHintEl = document.getElementById('similarity-delimiter-hint');
   var resultsEl = document.getElementById('similarity-results');
   var resultsBodyEl = document.getElementById('similarity-results-body');
 
@@ -31,9 +39,26 @@
   var libraryCache = {
     text: '',
     nBits: DEFAULT_FP_NBITS,
+    delimiterKey: 'auto',
     delimiter: DEFAULT_DELIMITER,
     entries: []
   };
+
+  function getDelimiterKey() {
+    return delimiterEl ? delimiterEl.value : 'auto';
+  }
+
+  function isAutoDelimiter() {
+    return getDelimiterKey() === 'auto';
+  }
+
+  function resolveDelimiter(text) {
+    var key = getDelimiterKey();
+    if (key === 'auto') {
+      return detectDelimiter(text);
+    }
+    return DELIMITER_MAP[key] || DEFAULT_DELIMITER;
+  }
 
   function getFpNBits() {
     if (!fpSizeEl) {
@@ -62,14 +87,23 @@
     return ((n + (n >> 4)) & 0x0f);
   }
 
-  function tanimoto(fpA, fpB) {
+  function computeSimilarities(fpA, fpB) {
     var both = 0;
-    var total = 0;
+    var countA = 0;
+    var countB = 0;
+    var union = 0;
+
     for (var i = 0; i < fpA.length; i++) {
       both += popcount(fpA[i] & fpB[i]);
-      total += popcount(fpA[i] | fpB[i]);
+      countA += popcount(fpA[i]);
+      countB += popcount(fpB[i]);
+      union += popcount(fpA[i] | fpB[i]);
     }
-    return total === 0 ? 0 : both / total;
+
+    return {
+      tanimoto: union === 0 ? 0 : both / union,
+      dice: (countA + countB) === 0 ? 0 : (2 * both) / (countA + countB)
+    };
   }
 
   function detectDelimiter(text) {
@@ -95,12 +129,21 @@
     return bestDelimiter;
   }
 
-  function updateDelimiterLabel(delimiter) {
-    if (!delimiterLabelEl) {
+  function updateDelimiterHint(delimiter) {
+    if (!delimiterHintEl) {
+      return;
+    }
+    if (!isAutoDelimiter()) {
+      delimiterHintEl.hidden = true;
+      delimiterHintEl.textContent = '';
       return;
     }
     var label = DELIMITER_LABELS[delimiter] || 'comma';
-    delimiterLabelEl.textContent = 'Delimiter: ' + label;
+    delimiterHintEl.innerHTML =
+      '<span class="similarity-delimiter-hint-main">Detected delimiter: ' +
+      '<span class="similarity-delimiter-hint-value">' + label + '</span></span>' +
+      '<span class="similarity-delimiter-hint-sub">' + DELIMITER_CHOICES_TEXT + '</span>';
+    delimiterHintEl.hidden = false;
   }
 
   function splitLibrary(text, delimiter) {
@@ -111,9 +154,8 @@
     });
   }
 
-  function parseLibrary(text, nBits) {
-    var delimiter = detectDelimiter(text);
-    updateDelimiterLabel(delimiter);
+  function parseLibrary(text, nBits, delimiter) {
+    updateDelimiterHint(delimiter);
     var tokens = splitLibrary(text, delimiter);
     var fpOptions = getFpOptions(nBits);
     var entries = [];
@@ -140,15 +182,21 @@
     };
   }
 
-  function buildLibraryCache(text, nBits) {
-    if (text === libraryCache.text && nBits === libraryCache.nBits) {
+  function buildLibraryCache(text, nBits, delimiterKey) {
+    if (
+      text === libraryCache.text &&
+      nBits === libraryCache.nBits &&
+      delimiterKey === libraryCache.delimiterKey
+    ) {
       return libraryCache;
     }
 
-    var parsed = parseLibrary(text, nBits);
+    var delimiter = resolveDelimiter(text);
+    var parsed = parseLibrary(text, nBits, delimiter);
     libraryCache = {
       text: text,
       nBits: nBits,
+      delimiterKey: delimiterKey,
       delimiter: parsed.delimiter,
       entries: parsed.entries,
       invalidCount: parsed.invalidCount
@@ -180,9 +228,13 @@
       smilesCell.textContent = result.smiles;
       row.appendChild(smilesCell);
 
-      var scoreCell = document.createElement('td');
-      scoreCell.textContent = result.score.toFixed(3);
-      row.appendChild(scoreCell);
+      var tanimotoCell = document.createElement('td');
+      tanimotoCell.textContent = result.tanimoto.toFixed(3);
+      row.appendChild(tanimotoCell);
+
+      var diceCell = document.createElement('td');
+      diceCell.textContent = result.dice.toFixed(3);
+      row.appendChild(diceCell);
 
       resultsBodyEl.appendChild(row);
     });
@@ -200,6 +252,7 @@
     var querySmiles = queryEl.value.trim();
     var topK = parseInt(topkEl.value, 10);
     var nBits = getFpNBits();
+    var delimiterKey = getDelimiterKey();
 
     if (!libraryText.trim()) {
       setStatus('Paste a library of SMILES to search.');
@@ -229,7 +282,7 @@
     var queryFp = queryMol.get_morgan_fp_as_uint8array(getFpOptions(nBits));
     queryMol.delete();
 
-    var cache = buildLibraryCache(libraryText, nBits);
+    var cache = buildLibraryCache(libraryText, nBits, delimiterKey);
     if (cache.entries.length === 0) {
       var skippedMsg = cache.invalidCount > 0
         ? 'No valid molecules found (' + cache.invalidCount + ' invalid SMILES skipped).'
@@ -240,14 +293,16 @@
     }
 
     var scored = cache.entries.map(function (entry) {
+      var similarities = computeSimilarities(queryFp, entry.fp);
       return {
         smiles: entry.smiles,
-        score: tanimoto(queryFp, entry.fp)
+        tanimoto: similarities.tanimoto,
+        dice: similarities.dice
       };
     });
 
     scored.sort(function (a, b) {
-      return b.score - a.score;
+      return b.tanimoto - a.tanimoto;
     });
 
     var results = scored.slice(0, topK);
@@ -266,14 +321,28 @@
     if (!RDKit) {
       return;
     }
-    var delimiter = detectDelimiter(libraryEl.value);
-    updateDelimiterLabel(delimiter);
-    if (libraryEl.value !== libraryCache.text) {
+    if (isAutoDelimiter()) {
+      updateDelimiterHint(resolveDelimiter(libraryEl.value));
+    }
+    if (
+      libraryEl.value !== libraryCache.text ||
+      getDelimiterKey() !== libraryCache.delimiterKey
+    ) {
       invalidateLibraryCache();
     }
   }
 
   function onFpSizeChange() {
+    invalidateLibraryCache();
+  }
+
+  function onDelimiterChange() {
+    if (isAutoDelimiter()) {
+      updateDelimiterHint(resolveDelimiter(libraryEl.value));
+    } else if (delimiterHintEl) {
+      delimiterHintEl.hidden = true;
+      delimiterHintEl.textContent = '';
+    }
     invalidateLibraryCache();
   }
 
@@ -304,6 +373,10 @@
 
   if (fpSizeEl) {
     fpSizeEl.addEventListener('change', onFpSizeChange);
+  }
+
+  if (delimiterEl) {
+    delimiterEl.addEventListener('change', onDelimiterChange);
   }
 
   initRDKit();
