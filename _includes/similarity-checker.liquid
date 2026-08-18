@@ -1,0 +1,96 @@
+<div id="similarity-checker-root" class="similarity-checker-root">
+  <header class="similarity-checker-header">
+    <h1 class="similarity-checker-title">{{ page.title }}</h1>
+    {% if page.description %}
+      <p class="similarity-checker-description">{{ page.description }}</p>
+    {% endif %}
+  </header>
+
+  <form id="similarity-checker-form" class="similarity-checker-form" novalidate>
+    <div class="form-group">
+      <label for="similarity-library">Library SMILES</label>
+      <textarea
+        id="similarity-library"
+        class="form-control similarity-library-input"
+        rows="6"
+        placeholder="CCO, c1ccccc1, CC(=O)O, c1ccc(O)cc1"
+        spellcheck="false"
+      ></textarea>
+      <div class="similarity-delimiter-row">
+        <small id="similarity-delimiter-hint" class="form-text text-muted similarity-delimiter-hint" hidden></small>
+        <select
+          id="similarity-delimiter"
+          class="form-control form-control-sm similarity-delimiter-select"
+          aria-label="Delimiter"
+        >
+          <option value="auto" selected>Auto-detect</option>
+          <option value=",">Comma</option>
+          <option value="newline">Newline</option>
+          <option value="tab">Tab</option>
+          <option value="semicolon">Semicolon</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="similarity-query">Query SMILES</label>
+      <input
+        type="text"
+        id="similarity-query"
+        class="form-control"
+        placeholder="c1ccccc1"
+        spellcheck="false"
+      >
+    </div>
+
+    <div class="form-group similarity-options-row">
+      <div class="similarity-topk-group">
+        <label for="similarity-topk">Top k</label>
+        <input
+          type="number"
+          id="similarity-topk"
+          class="form-control similarity-topk-input"
+          value="10"
+          min="1"
+          max="1000"
+        >
+      </div>
+
+      <div class="similarity-fp-size-group">
+        <label for="similarity-fp-size">Fingerprint size</label>
+        <select id="similarity-fp-size" class="form-control similarity-fp-size-select">
+          <option value="64">64</option>
+          <option value="128">128</option>
+          <option value="256">256</option>
+          <option value="512">512</option>
+          <option value="1024" selected>1024</option>
+          <option value="2048">2048</option>
+        </select>
+      </div>
+    </div>
+
+    <button type="submit" id="similarity-search-btn" class="btn btn-primary similarity-search-btn" disabled>
+      Search
+    </button>
+  </form>
+
+  <p id="similarity-status" class="similarity-status" role="status">Loading RDKit…</p>
+
+  <div id="similarity-results" class="similarity-results" hidden>
+    <h2 class="similarity-results-title">Results</h2>
+    <div class="table-responsive">
+      <table class="table table-striped similarity-results-table">
+        <thead>
+          <tr>
+            <th scope="col">Rank</th>
+            <th scope="col">Structure</th>
+            <th scope="col">SMILES</th>
+            <th scope="col">Tanimoto</th>
+            <th scope="col">Dice</th>
+          </tr>
+        </thead>
+        <tbody id="similarity-results-body"></tbody>
+      </table>
+    </div>
+  </div>
+</div>

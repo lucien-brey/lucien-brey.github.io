@@ -323,6 +323,12 @@
   <script defer src="{{ '/assets/js/invitation.js' | relative_url | bust_file_cache }}"></script>
 {% endif %}
 
+{% if page.similarity_checker %}
+  <!-- Similarity checker: RDKit.js + similarity logic -->
+  <script src="https://cdn.jsdelivr.net/npm/@rdkit/rdkit@2025.3.4-1.0.0/dist/RDKit_minimal.js"></script>
+  <script defer src="{{ '/assets/js/rdkit.js' | relative_url | bust_file_cache }}"></script>
+{% endif %}
+
 {% if site.back_to_top %}
   <!-- Back to Top -->
   <script src="{{ '/assets/js/vanilla-back-to-top.min.js' | relative_url | bust_file_cache }}"></script>
