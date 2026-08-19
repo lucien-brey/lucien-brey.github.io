@@ -6,6 +6,22 @@
     {% endif %}
   </header>
 
+  <div class="similarity-explanation mt-3">
+    <p>
+      Molecular similarity is calculated by comparing molecular fingerprints $A$ and $B$, where $a = |A|$ and $b = |B|$ represent the number of set features in each molecule, and $c = |A \cap B|$ is the count of shared features:
+    </p>
+    <ul>
+      <li>
+        <strong>Tanimoto Similarity ($T$):</strong> Calculates the proportion of shared features relative to the union of all features present across both molecules:
+        $$T(A, B) = \frac{|A \cap B|}{|A \cup B|} = \frac{c}{a + b - c}$$
+      </li>
+      <li>
+        <strong>Dice Similarity ($D$):</strong> Measures shared features relative to the average fingerprint size, giving double weight to common features:
+        $$D(A, B) = \frac{2|A \cap B|}{|A| + |B|} = \frac{2c}{a + b}$$
+      </li>
+    </ul>
+  </div>
+
   <form id="similarity-checker-form" class="similarity-checker-form" novalidate>
     <div class="form-group">
       <label for="similarity-library">Library SMILES</label>
@@ -78,6 +94,9 @@
 
   <div id="similarity-results" class="similarity-results" hidden>
     <h2 class="similarity-results-title">Results</h2>
+    <p>
+      Search results are ranked in descending order based on the sum of both metric scores ($Score = T + D$).
+    </p>
     <div class="table-responsive">
       <table class="table table-striped similarity-results-table">
         <thead>
