@@ -2,15 +2,14 @@
 layout: about
 title: about
 permalink: /
-subtitle: Machine Learning Researcher and Chemist @ <a href="https://www.atinary.com" target="_blank">Atinary Technologies</a>
+subtitle: ELLIS PhD student @ Tübingen AI Center and Imperial College London
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>personal: <br></br> <code>lucien[dot]brey[at]hotmail[dot]fr </code></p>
-    <p>work: <br></br> <code>lbrey[at]atinary[dot]com</code></p>
+    <p>email: <br></br> <code>lucien[dot]brey[at]hotmail[dot]fr</code></p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 
@@ -27,6 +26,8 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Trying to make computers learn chemistry. Working at [Atinary Technologies](https://www.atinary.com/) in Lausanne Switzerland. MSc in Biological and Molecular Chemistry from EPFL, I wrote my master thesis with Prof. Rafa Gomez-Bombarelli in the [RGB lab](https://gomezbombarelli.mit.edu) at the Massachussets Institute of Technology. Previously I also worked with Prof. [Philippe Schwaller](https://scholar.google.com/citations?user=Tz0I4ywAAAAJ&hl=fr&oi=ao) (EPFL), Prof. [Clemence Corminboeuf](https://scholar.google.ch/citations?user=S33KGskAAAAJ&hl=en) (EPFL) and Prof. [Mårten Ahlquist](https://scholar.google.com/citations?user=ACVkVEwAAAAJ&hl=en) (KTH).
+I am an incoming ELLIS PhD student at Tübingen AI Center supervised by Prof. Philipp Hennig (University of Tübingen) and Antonio del Rio Chanona (Imperial College London) focusing on uncertainty-aware scaling-up of chemical processes.
 
-I am interested in probabilistic machine learning, catalysis, live music and chess.
+Before that I was working as an ML Scientist at [Atinary Technologies](https://www.atinary.com/) in Lausanne, Switzerland. I have graduated from a MSc in Biological and Molecular Chemistry from EPFL during which I wrote my master thesis with Prof. Rafa Gomez-Bombarelli at the [RGB lab](https://gomezbombarelli.mit.edu) at the Massachussets Institute of Technology. Previously, I also worked with Prof. [Philippe Schwaller](https://scholar.google.com/citations?user=Tz0I4ywAAAAJ&hl=fr&oi=ao) (EPFL), Prof. [Clemence Corminboeuf](https://scholar.google.ch/citations?user=S33KGskAAAAJ&hl=en) (EPFL) and Prof. [Mårten Ahlquist](https://scholar.google.com/citations?user=ACVkVEwAAAAJ&hl=en) (KTH).
+
+I am interested in probabilistic machine learning, chemistry, cooking, speedcubing, music and chess.
