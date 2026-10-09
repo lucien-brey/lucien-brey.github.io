@@ -441,6 +441,24 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
+// Google Scholar brand icon (inline-SVG mask so it uses the current Google brand glyph)
+.google-scholar-icon i.ai-google-scholar::before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+  background-color: var(--global-text-color);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3Cpath%20d='M5.242%2013.769L0%209.5%2012%200l12%209.5-5.242%204.269C17.548%2011.249%2014.978%209.5%2012%209.5c-2.977%200-5.548%201.748-6.758%204.269zM12%2010a7%207%200%201%200%200%2014%207%207%200%200%200%200-14z'/%3E%3C/svg%3E")
+    no-repeat center / contain;
+  mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3Cpath%20d='M5.242%2013.769L0%209.5%2012%200l12%209.5-5.242%204.269C17.548%2011.249%2014.978%209.5%2012%209.5c-2.977%200-5.548%201.748-6.758%204.269zM12%2010a7%207%200%201%200%200%2014%207%207%200%200%200%200-14z'/%3E%3C/svg%3E")
+    no-repeat center / contain;
+}
+
+.google-scholar-icon:hover i.ai-google-scholar::before {
+  background-color: var(--global-theme-color);
+}
+
 .wechat-modal {
   display: none;
   position: fixed;

@@ -53,7 +53,9 @@
   font-size: 1rem;
   border-radius: 2rem;
   cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
   border: 1px solid transparent;
 }
 
@@ -111,7 +113,10 @@
   background: var(--global-bg-color, #fff);
   color: var(--global-text-color, #333);
   border: 1px solid rgba(0, 0, 0, 0.15);
-  transition: background 0.2s, border-color 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    color 0.2s;
 }
 
 .invitation-date-option:hover {

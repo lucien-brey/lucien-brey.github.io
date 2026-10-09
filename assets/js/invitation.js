@@ -1,20 +1,20 @@
 (function () {
-  'use strict';
+  "use strict";
 
-  const INTRO_TEXT = 'You are invited to a date in Lausanne';
+  const INTRO_TEXT = "You are invited to a date in Lausanne";
   const INTRO_DURATION_MS = 2500;
-  const REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const REDUCED_MOTION = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  const introEl = document.getElementById('invitation-intro');
-  const introTextEl = document.getElementById('invitation-intro-text');
-  const stillEl = document.getElementById('invitation-still');
-  const questionEl = document.getElementById('invitation-question');
-  const yesBtn = document.getElementById('invitation-yes');
-  const noWrapper = document.getElementById('invitation-no-wrapper');
-  const noBtn = document.getElementById('invitation-no');
-  const datePickerEl = document.getElementById('invitation-date-picker');
-  const datesContainer = document.getElementById('invitation-dates');
-  const dateConfirmEl = document.getElementById('invitation-date-confirm');
+  const introEl = document.getElementById("invitation-intro");
+  const introTextEl = document.getElementById("invitation-intro-text");
+  const stillEl = document.getElementById("invitation-still");
+  const questionEl = document.getElementById("invitation-question");
+  const yesBtn = document.getElementById("invitation-yes");
+  const noWrapper = document.getElementById("invitation-no-wrapper");
+  const noBtn = document.getElementById("invitation-no");
+  const datePickerEl = document.getElementById("invitation-date-picker");
+  const datesContainer = document.getElementById("invitation-dates");
+  const dateConfirmEl = document.getElementById("invitation-date-confirm");
 
   if (!introTextEl || !stillEl || !questionEl || !yesBtn || !noWrapper || !noBtn || !datePickerEl) {
     return;
@@ -27,7 +27,7 @@
       return;
     }
     var i = 0;
-    introTextEl.textContent = '';
+    introTextEl.textContent = "";
     function tick() {
       if (i <= INTRO_TEXT.length) {
         introTextEl.textContent = INTRO_TEXT.slice(0, i);
@@ -41,19 +41,19 @@
   }
 
   function finishIntro() {
-    if (typeof confetti === 'function') {
+    if (typeof confetti === "function") {
       confetti({
         particleCount: 120,
         spread: 70,
-        origin: { y: 0.6 }
+        origin: { y: 0.6 },
       });
     }
-    introEl.setAttribute('aria-hidden', 'true');
+    introEl.setAttribute("aria-hidden", "true");
     introEl.hidden = true;
-    stillEl.removeAttribute('hidden');
-    stillEl.setAttribute('aria-hidden', 'false');
-    questionEl.removeAttribute('hidden');
-    questionEl.setAttribute('aria-hidden', 'false');
+    stillEl.removeAttribute("hidden");
+    stillEl.setAttribute("aria-hidden", "false");
+    questionEl.removeAttribute("hidden");
+    questionEl.setAttribute("aria-hidden", "false");
     initNoButtonFlee();
   }
 
@@ -69,7 +69,7 @@
     var running = true;
 
     function updatePosition() {
-      var root = document.getElementById('invitation-root');
+      var root = document.getElementById("invitation-root");
       if (!root) return;
       var rootRect = root.getBoundingClientRect();
       var noRect = noBtn.getBoundingClientRect();
@@ -96,59 +96,63 @@
         if (Math.abs(noY) < 0.5) noY = 0;
       }
 
-      noWrapper.style.transform = 'translate(' + noX + 'px, ' + noY + 'px)';
+      noWrapper.style.transform = "translate(" + noX + "px, " + noY + "px)";
       if (running) requestAnimationFrame(updatePosition);
     }
 
-    document.addEventListener('mousemove', function (e) {
-      var root = document.getElementById('invitation-root');
+    document.addEventListener("mousemove", function (e) {
+      var root = document.getElementById("invitation-root");
       if (!root) return;
       var r = root.getBoundingClientRect();
       targetX = e.clientX - r.left;
       targetY = e.clientY - r.top;
     });
 
-    document.addEventListener('touchmove', function (e) {
-      if (e.touches.length) {
-        var root = document.getElementById('invitation-root');
-        if (!root) return;
-        var r = root.getBoundingClientRect();
-        targetX = e.touches[0].clientX - r.left;
-        targetY = e.touches[0].clientY - r.top;
-      }
-    }, { passive: true });
+    document.addEventListener(
+      "touchmove",
+      function (e) {
+        if (e.touches.length) {
+          var root = document.getElementById("invitation-root");
+          if (!root) return;
+          var r = root.getBoundingClientRect();
+          targetX = e.touches[0].clientX - r.left;
+          targetY = e.touches[0].clientY - r.top;
+        }
+      },
+      { passive: true }
+    );
 
     requestAnimationFrame(updatePosition);
   }
 
-  yesBtn.addEventListener('click', function () {
-    questionEl.setAttribute('aria-hidden', 'true');
+  yesBtn.addEventListener("click", function () {
+    questionEl.setAttribute("aria-hidden", "true");
     questionEl.hidden = true;
-    datePickerEl.removeAttribute('hidden');
-    datePickerEl.setAttribute('aria-hidden', 'false');
+    datePickerEl.removeAttribute("hidden");
+    datePickerEl.setAttribute("aria-hidden", "false");
   });
 
   if (datesContainer) {
-    datesContainer.addEventListener('click', function (e) {
-      var btn = e.target.closest('.invitation-date-option');
+    datesContainer.addEventListener("click", function (e) {
+      var btn = e.target.closest(".invitation-date-option");
       if (!btn) return;
-      document.querySelectorAll('.invitation-date-option').forEach(function (b) {
-        b.classList.remove('invitation-date-selected');
+      document.querySelectorAll(".invitation-date-option").forEach(function (b) {
+        b.classList.remove("invitation-date-selected");
       });
-      btn.classList.add('invitation-date-selected');
-      var dateStr = btn.getAttribute('data-date');
+      btn.classList.add("invitation-date-selected");
+      var dateStr = btn.getAttribute("data-date");
       var label = btn.textContent;
       if (dateConfirmEl) {
-        dateConfirmEl.textContent = 'You chose ' + label + '. See you then!';
+        dateConfirmEl.textContent = "You chose " + label + ". See you then!";
         dateConfirmEl.hidden = false;
       }
-      var root = document.getElementById('invitation-root');
-      var endpoint = root && root.getAttribute('data-invitation-endpoint');
+      var root = document.getElementById("invitation-root");
+      var endpoint = root && root.getAttribute("data-invitation-endpoint");
       if (endpoint) {
         fetch(endpoint, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ date: label, date_iso: dateStr })
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ date: label, date_iso: dateStr }),
         }).catch(function () {});
       }
     });
