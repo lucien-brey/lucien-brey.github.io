@@ -11,9 +11,9 @@
       "city": "Epalinges",
       "countryCode": "CH",
       "region": "Vaud"
-    // "phone": "(912) 123-4567",
-    // "url": "https://alshedivat.github.io/al-folio/",
-    // "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
+      // "phone": "(912) 123-4567",
+      // "url": "https://alshedivat.github.io/al-folio/",
+      // "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
     },
     "profiles": [
       {
@@ -29,112 +29,104 @@
       "position": "Machine Learning Scientist",
       "url": "https://www.atinary.com",
       "startDate": "2024-11-15",
-    //   "endDate": "1955-01-01",
+      //   "endDate": "1955-01-01",
       "summary": "Member of the AI Research team. Research and development of new algorithms. Led collaboration with academic partners.",
       "highlights": ["Bayesian Optimization", "Constrained Optimization", "Transfer Learning", "Generative Modeling"]
     }
   ],
   "education": [
-      {
-          "institution": "École Polytechnique Fédérale de Lausanne, EPFL",
-          "location": "Lausanne, Switzerland",
-          "url": "https://www.epfl.ch/",
-          "area": "Molecular and Biological Chemistry",
-          "studyType": "MSc",
-          "startDate": "2022-09-19",
-          "endDate": "2024-09-02",
-          "score": "5.49/6",
-          "courses": [
-              "Artificial Neural Networks and Reinforcement Learning",
-              "Machine Learning for Physicists",
-              "AI for Chemistry",
-              "Molecular Quantum Dynamics",
-              "Catalyst design for synthesis",
-              "Understanding advanced molecular simulations"
-            ]
-        },
-        {
-            "institution": "Massachusetts Institute of Technology, MIT",
-            "location": "Cambridge MA, USA",
-            "url": "https://www.mit.edu/",
-            "area": "Computation Design of Materials",
-            "studyType": "Master Thesis",
-            "startDate": "2024-03-01",
-            "endDate": "2024-09-02",
-            "courses": [
-                "Wrote my Master Thesis with Prof. Rafa Gomez-Bombarelli",
-                "Title: Differentiable inverse design of metal oxides and perovskites catalyst via fine-tuning of surface oxygens site-properties",
-                "Built differentiable pipeline for geometry optimization of periodic structures based target site-property."
-            ]
-        },
-        {
-            "institution": "École Polytechnique Fédérale de Lausanne, EPFL",
-            "location": "Lausanne, Switzerland",
-            "url": "https://www.epfl.ch/",
-            "area": "Chemistry and Chemical Engineering",
-            "studyType": "BSc",
-            "startDate": "2019-09-13",
-            "endDate": "2022-07-21",
-            "score": "4.70/6",
-            "courses": [
-                "Advanced General Chemistry",
-                "Quantum Chemistry",
-                "Spectroscopy",
-                "Mathematical Methods in Chemistry"
-            ]
-        },
-        {
-            "institution": "Kungliga Tekniska Högskolan, KTH",
-            "location": "Stockholm, Sweden",
-            "url": "https://www.kth.se",
-            "area": "Chemistry and Chemical Engineering",
-            "studyType": "Exchange Year",
-            "startDate": "2021-09-01",
-            "endDate": "2022-06-05",
-            "courses": [
-                "Introduction to Machine Learning",
-                "Introduction to Python Programming Language"
-            ]
-        }
-    ],
-    // "teaching": [
-    //     {
-    //         "institution": "École Polytechnique Fédérale de Lausanne, EPFL",
-    //         "class": "Advanced General Chemistry",
-    //         "startDate": "2020",
-    //         "endDate": "2022",
-    //     }
-    // ],
-    "volunteer": [
-      {
-        "organization": "Association des étudiants de chimie (AdEC)",
-        "location": "Lausanne, Switzerland",
-        "position": "President",
-        "url": "https://example.com",
-        "startDate": "2022-09-12",
-        "endDate": "2023-08-15"
+    {
+      "institution": "École Polytechnique Fédérale de Lausanne, EPFL",
+      "location": "Lausanne, Switzerland",
+      "url": "https://www.epfl.ch/",
+      "area": "Molecular and Biological Chemistry",
+      "studyType": "MSc",
+      "startDate": "2022-09-19",
+      "endDate": "2024-09-02",
+      "score": "5.49/6",
+      "courses": [
+        "Artificial Neural Networks and Reinforcement Learning",
+        "Machine Learning for Physicists",
+        "AI for Chemistry",
+        "Molecular Quantum Dynamics",
+        "Catalyst design for synthesis",
+        "Understanding advanced molecular simulations"
+      ]
+    },
+    {
+      "institution": "Massachusetts Institute of Technology, MIT",
+      "location": "Cambridge MA, USA",
+      "url": "https://www.mit.edu/",
+      "area": "Computation Design of Materials",
+      "studyType": "Master Thesis",
+      "startDate": "2024-03-01",
+      "endDate": "2024-09-02",
+      "courses": [
+        "Wrote my Master Thesis with Prof. Rafa Gomez-Bombarelli",
+        "Title: Differentiable inverse design of metal oxides and perovskites catalyst via fine-tuning of surface oxygens site-properties",
+        "Built differentiable pipeline for geometry optimization of periodic structures based target site-property."
+      ]
+    },
+    {
+      "institution": "École Polytechnique Fédérale de Lausanne, EPFL",
+      "location": "Lausanne, Switzerland",
+      "url": "https://www.epfl.ch/",
+      "area": "Chemistry and Chemical Engineering",
+      "studyType": "BSc",
+      "startDate": "2019-09-13",
+      "endDate": "2022-07-21",
+      "score": "4.70/6",
+      "courses": ["Advanced General Chemistry", "Quantum Chemistry", "Spectroscopy", "Mathematical Methods in Chemistry"]
+    },
+    {
+      "institution": "Kungliga Tekniska Högskolan, KTH",
+      "location": "Stockholm, Sweden",
+      "url": "https://www.kth.se",
+      "area": "Chemistry and Chemical Engineering",
+      "studyType": "Exchange Year",
+      "startDate": "2021-09-01",
+      "endDate": "2022-06-05",
+      "courses": ["Introduction to Machine Learning", "Introduction to Python Programming Language"]
+    }
+  ],
+  // "teaching": [
+  //     {
+  //         "institution": "École Polytechnique Fédérale de Lausanne, EPFL",
+  //         "class": "Advanced General Chemistry",
+  //         "startDate": "2020",
+  //         "endDate": "2022",
+  //     }
+  // ],
+  "volunteer": [
+    {
+      "organization": "Association des étudiants de chimie (AdEC)",
+      "location": "Lausanne, Switzerland",
+      "position": "President",
+      "url": "https://example.com",
+      "startDate": "2022-09-12",
+      "endDate": "2023-08-15"
       //   "summary": "Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.",
       //   "highlights": ["Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march.", "Men of the year 2014 by Time magazine"]
-      }
-    ],
-    //   "awards": [
-        //     {
-//       "title": "Nobel Prize in Physics",
-//       "date": "1921-11-01",
-//       "awarder": "Royal Swedish Academy of Sciences",
-//       "url": "https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/",
-//       "summary": "The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'"
-//     }
-//   ],
-//   "certificates": [
-//     {
-//       "name": "Machine Learning",
-//       "date": "2018-01-01",
-//       "issuer": "Stanford University",
-//       "url": "https://example.com",
-//       "icon": "fa-solid fa-location-dot"
-//     },
-//   ],
+    }
+  ],
+  //   "awards": [
+  //     {
+  //       "title": "Nobel Prize in Physics",
+  //       "date": "1921-11-01",
+  //       "awarder": "Royal Swedish Academy of Sciences",
+  //       "url": "https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/",
+  //       "summary": "The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'"
+  //     }
+  //   ],
+  //   "certificates": [
+  //     {
+  //       "name": "Machine Learning",
+  //       "date": "2018-01-01",
+  //       "issuer": "Stanford University",
+  //       "url": "https://example.com",
+  //       "icon": "fa-solid fa-location-dot"
+  //     },
+  //   ],
   "publications": [
     {
       "name": "A genetic optimization strategy with generality in asymmetric organocatalysis as a primary target",
@@ -151,38 +143,32 @@
       "summary": "Project in a Social and Human Sciences class during my master that led to that publication. We came up with a statistical model and a form to explain the interplay between loss and threat in the context of extreme ecological law changes. Some field work also has been perfomed in order to gather data asking people to fill our survey."
     },
     {
-        "name": "Bridging Innovation and Efficiency: The Promises and Challenges of Self-Driving Labs as Sustainable Drivers for Chemistry",
-        "publisher": "Chimia",
-        "releaseDate": "2025",
-        "url": "",
-        "summary": "Industrial paper from Atinary Technologies. Wrote the perspective on AI in R&D."
+      "name": "Bridging Innovation and Efficiency: The Promises and Challenges of Self-Driving Labs as Sustainable Drivers for Chemistry",
+      "publisher": "Chimia",
+      "releaseDate": "2025",
+      "url": "",
+      "summary": "Industrial paper from Atinary Technologies. Wrote the perspective on AI in R&D."
     }
   ],
   "skills": [
     {
-        "name": "Machine Learning",
-        "level": "Master",
-        "icon": "fa-solid fa-hashtag",
-        "keywords": [
-            "Probabilistic Machine Learning",
-            "Bayesian Optimization",
-            "Gaussian Processes",
-            "Neural Processes",
-            "Variational Inference",
-            "Generative Modeling"
-        ]
+      "name": "Machine Learning",
+      "level": "Master",
+      "icon": "fa-solid fa-hashtag",
+      "keywords": [
+        "Probabilistic Machine Learning",
+        "Bayesian Optimization",
+        "Gaussian Processes",
+        "Neural Processes",
+        "Variational Inference",
+        "Generative Modeling"
+      ]
     },
     {
       "name": "Chemistry",
       "level": "Master",
       "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "Molecular Dynamics",
-        "Quantum Chemistry",
-        "Monte Carlo Simulations",
-        "Heterogeneous Catalysis",
-        "Organic Chemistry"
-      ]
+      "keywords": ["Molecular Dynamics", "Quantum Chemistry", "Monte Carlo Simulations", "Heterogeneous Catalysis", "Organic Chemistry"]
     }
   ],
   "languages": [
@@ -197,27 +183,21 @@
       "icon": ""
     },
     {
-        "language": "Spanish",
-        "fluency": "Fluent (C1-C2)",
-        "icon": ""
+      "language": "Spanish",
+      "fluency": "Fluent (C1-C2)",
+      "icon": ""
     },
     {
-        "language": "Italian",
-        "fluency": "Limited proviciency (B2)",
-        "icon": ""
+      "language": "Italian",
+      "fluency": "Limited proviciency (B2)",
+      "icon": ""
     }
   ],
   "interests": [
     {
       "name": "Machine Learning and Artificial Intelligence",
       "icon": "fa-solid fa-tag",
-      "keywords": [
-        "Diffusion Model",
-        "Flow Matching Model",
-        "Bayesian Experimental Design",
-        "Mixed-spaces Optimization",
-        "Reinforcement Learning"
-      ]
+      "keywords": ["Diffusion Model", "Flow Matching Model", "Bayesian Experimental Design", "Mixed-spaces Optimization", "Reinforcement Learning"]
     }
   ],
   "references": [
